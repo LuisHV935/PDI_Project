@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+
+<?import javafx.scene.image.ImageView?>
+<?import java.lang.String?>
+<BorderPane fx:id="root" xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.example.pdiproject.Controllers.IndexController">
+
+
+    <top>
+        <HBox fx:id="panelSuperior" spacing="10" alignment="CENTER_LEFT"
+              style="-fx-padding: 10">
+
+            <Button fx:id="cargarImagen" text="Cargar imagen"
+                    onAction="#handleCargarImagen"
+                    styleClass="botonTransparente"/>
+
+            <MenuButton fx:id="modificacionesDisponibles" text="Modificaciones" disable="true" styleClass="botonTransparente">
+                <items>
+                    <MenuItem fx:id="iluminacionItem" text="Iluminación"
+                              onAction="#handleIluminacion" />
+                    <MenuItem fx:id="contrasteItem" text="Contraste"
+                              onAction="#handleContraste"/>
+                </items>
+            </MenuButton>
+
+            <MenuButton fx:id="elegirImagenATrabajar" text="Trabajar con" disable="true" styleClass="botonTransparente">
+                <items>
+                    <MenuItem fx:id="originalItem" text="Original"
+                              onAction="#handleOriginal" />
+                    <MenuItem fx:id="escaladeGItem" text="Escala de grises"
+                              onAction="#handleEscalaDeGrises"/>
+                </items>>
+            </MenuButton>
+
+            <MenuButton fx:id="metricasDeLaImagen" text="Metricas" disable="true" styleClass="botonTransparente">
+                <items>
+                    <MenuItem fx:id="histogramaB" text="Histogramas"
+                              onAction="#handleHistograma" />
+                    <MenuItem fx:id="probabilidadB" text="Probabilidad"
+                              onAction="#handleProbabilidad" />
+                    <MenuItem fx:id="DPPB" text="DPP"
+                                onAction="#handleDPP"/>
+                </items>
+            </MenuButton>
+
+            <Button fx:id="ruidoB" text="Ruido"
+                    onAction="#handleAplicarRuido"
+                    styleClass="botonTransparente"
+                    disable="true"/>
+
+            <Button fx:id="filtrosB" text="Filtros"
+                    onAction="#handleFiltros"
+                    styleClass="botonTransparente"
+                    disable="true"/>
+
+            <Button fx:id="conversionesB" text="Conversiones de color"
+                    onAction="#handleConversiones"
+                    styleClass="botonTransparente"
+                    disable="true"/>
+
+        </HBox>
+    </top>
+
+    <center>
+        <ImageView fx:id="imagenAMostrar"
+                   fitWidth="1200"
+                   fitHeight="750"/>
+    </center>
+</BorderPane>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.geometry.Insets?>
+
+<GridPane xmlns="http://javafx.com/javafx"
+          xmlns:fx="http://javafx.com/fxml"
+          fx:controller="com.example.pdiproject.Controllers.DPPController"
+          fx:id="root"
+          hgap="16" vgap="16"
+          styleClass="root">
+
+    <padding>
+        <Insets top="16" right="16" bottom="16" left="16"/>
+    </padding>
+
+    <VBox GridPane.columnIndex="0" GridPane.rowIndex="0" styleClass="hist-card" spacing="4">
+        <Label text="Canal R" styleClass="hist-label-r"/>
+        <BarChart fx:id="DPPR" animated="false" legendVisible="false"
+                  barGap="0" categoryGap="0" styleClass="hist-chart">
+            <xAxis><CategoryAxis tickLabelsVisible="false" styleClass="hist-axis"/></xAxis>
+            <yAxis><NumberAxis autoRanging="true" styleClass="hist-axis"/></yAxis>
+        </BarChart>
+    </VBox>
+
+
+    <VBox GridPane.columnIndex="1" GridPane.rowIndex="0" styleClass="hist-card" spacing="4">
+        <Label text="Canal G" styleClass="hist-label-g"/>
+        <BarChart fx:id="DPPG" animated="false" legendVisible="false"
+                  barGap="0" categoryGap="0" styleClass="hist-chart">
+            <xAxis><CategoryAxis tickLabelsVisible="false" styleClass="hist-axis"/></xAxis>
+            <yAxis><NumberAxis autoRanging="true" styleClass="hist-axis"/></yAxis>
+        </BarChart>
+    </VBox>
+
+    <VBox GridPane.columnIndex="0" GridPane.rowIndex="1" styleClass="hist-card" spacing="4">
+        <Label text="Canal B" styleClass="hist-label-b"/>
+        <BarChart fx:id="DPPB" animated="false" legendVisible="false"
+                  barGap="0" categoryGap="0" styleClass="hist-chart">
+            <xAxis><CategoryAxis tickLabelsVisible="false" styleClass="hist-axis"/></xAxis>
+            <yAxis><NumberAxis autoRanging="true" styleClass="hist-axis"/></yAxis>
+        </BarChart>
+    </VBox>
+
+    <VBox GridPane.columnIndex="1" GridPane.rowIndex="1" styleClass="hist-card" spacing="4">
+        <Label text="Canal I" styleClass="hist-label-i"/>
+        <BarChart fx:id="DPPI" animated="false" legendVisible="false"
+                  barGap="0" categoryGap="0" styleClass="hist-chart">
+            <xAxis><CategoryAxis tickLabelsVisible="false" styleClass="hist-axis"/></xAxis>
+            <yAxis><NumberAxis autoRanging="true" styleClass="hist-axis"/></yAxis>
+        </BarChart>
+    </VBox>
+
+</GridPane>

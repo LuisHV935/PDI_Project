@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+
+<ScrollPane fitToWidth="true"
+            xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            style="-fx-background-color: #1e1e2e; -fx-background: #1e1e2e;"
+            fx:controller="com.example.pdiproject.Controllers.ConversionController">
+
+    <VBox fx:id="root" spacing="14"
+          style="-fx-padding: 16; -fx-background-color: #1e1e2e;">
+
+        <!-- Toolbar -->
+        <HBox spacing="10" alignment="CENTER_LEFT">
+            <Label text="Modelo de color:" style="-fx-text-fill: #d0d0e0; -fx-font-size: 13px;"/>
+            <ComboBox fx:id="selectorModelo" promptText="Selecciona modelo" />
+            <Button text="Aplicar conversion" onAction="#aplicarConversion"/>
+        </HBox>
+
+        <Separator style="-fx-background-color: #3a3a52;"/>
+
+        <!-- Imagen original + reconstruida -->
+        <Label text="Original vs Reconstruida" style="-fx-text-fill: #7c3aed; -fx-font-size: 12px; -fx-font-weight: bold;"/>
+        <HBox spacing="24" alignment="CENTER">
+            <VBox spacing="6" alignment="CENTER">
+                <Label text="Original (RGB)" style="-fx-text-fill: #a0a0c0; -fx-font-size: 11px;"/>
+                <ImageView fx:id="imgOriginal" fitWidth="380" fitHeight="300" preserveRatio="true"/>
+            </VBox>
+            <VBox spacing="6" alignment="CENTER">
+                <Label fx:id="labelReconstruida" text="Reconstruida" style="-fx-text-fill: #a0a0c0; -fx-font-size: 11px;"/>
+                <ImageView fx:id="imgReconstruida" fitWidth="380" fitHeight="300" preserveRatio="true"/>
+            </VBox>
+        </HBox>
+
+        <Separator style="-fx-background-color: #3a3a52;"/>
+
+        <!-- Canales en escala de grises -->
+        <Label text="Canales en escala de grises" style="-fx-text-fill: #7c3aed; -fx-font-size: 12px; -fx-font-weight: bold;"/>
+        <HBox spacing="16" alignment="CENTER">
+            <VBox spacing="6" alignment="CENTER">
+                <Label fx:id="labelC1" text="Canal 1" style="-fx-text-fill: #d0d0e0; -fx-font-size: 11px;"/>
+                <ImageView fx:id="grisC1" fitWidth="240" fitHeight="190" preserveRatio="true"/>
+            </VBox>
+            <VBox spacing="6" alignment="CENTER">
+                <Label fx:id="labelC2" text="Canal 2" style="-fx-text-fill: #d0d0e0; -fx-font-size: 11px;"/>
+                <ImageView fx:id="grisC2" fitWidth="240" fitHeight="190" preserveRatio="true"/>
+            </VBox>
+            <VBox spacing="6" alignment="CENTER">
+                <Label fx:id="labelC3" text="Canal 3" style="-fx-text-fill: #d0d0e0; -fx-font-size: 11px;"/>
+                <ImageView fx:id="grisC3" fitWidth="240" fitHeight="190" preserveRatio="true"/>
+            </VBox>
+            <VBox fx:id="panelC4" spacing="6" alignment="CENTER" visible="false" managed="false">
+                <Label fx:id="labelC4" text="Canal 4" style="-fx-text-fill: #d0d0e0; -fx-font-size: 11px;"/>
+                <ImageView fx:id="grisC4" fitWidth="240" fitHeight="190" preserveRatio="true"/>
+            </VBox>
+        </HBox>
+
+        <Separator style="-fx-background-color: #3a3a52;"/>
+
+        <!-- Canales en color -->
+        <Label text="Canales en color" style="-fx-text-fill: #7c3aed; -fx-font-size: 12px; -fx-font-weight: bold;"/>
+        <HBox spacing="16" alignment="CENTER">
+            <VBox spacing="6" alignment="CENTER">
+                <ImageView fx:id="colorC1" fitWidth="240" fitHeight="190" preserveRatio="true"/>
+            </VBox>
+            <VBox spacing="6" alignment="CENTER">
+                <ImageView fx:id="colorC2" fitWidth="240" fitHeight="190" preserveRatio="true"/>
+            </VBox>
+            <VBox spacing="6" alignment="CENTER">
+                <ImageView fx:id="colorC3" fitWidth="240" fitHeight="190" preserveRatio="true"/>
+            </VBox>
+            <VBox spacing="6" alignment="CENTER">
+                <ImageView fx:id="colorC4" fitWidth="240" fitHeight="190" preserveRatio="true"/>
+            </VBox>
+        </HBox>
+
+    </VBox>
+</ScrollPane>

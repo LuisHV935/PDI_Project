@@ -1,0 +1,159 @@
+
+.root {
+    -fx-background-color: #1e1e2e;
+    -fx-font-family: "Segoe UI", sans-serif;
+    -fx-font-size: 13px;
+}
+
+#panelSuperior {
+    -fx-background-color: #16161f;
+    -fx-padding: 10 16 10 16;
+    -fx-spacing: 8;
+}
+
+/* Botones */
+.button, .menu-button {
+    -fx-background-color: #2a2a3d;
+    -fx-text-fill: #d0d0e0;
+    -fx-background-radius: 6;
+    -fx-border-color: #3a3a52;
+    -fx-border-radius: 6;
+    -fx-border-width: 1;
+    -fx-padding: 6 16 6 16;
+    -fx-cursor: hand;
+}
+
+.comboBox {
+    -fx-background-color: #2a2a3d;
+    -fx-text-fill: #d0d0e0;
+    -fx-background-radius: 6;
+    -fx-border-color: #3a3a52;
+    -fx-border-radius: 6;
+    -fx-border-width: 1;
+    -fx-padding: 6 16 6 16;
+    -fx-cursor: hand;
+}
+
+.button:hover, .menu-button:hover {
+    -fx-background-color: #7c3aed;
+    -fx-text-fill: #ffffff;
+    -fx-border-color: #7c3aed;
+}
+
+.button:pressed, .menu-button:pressed {
+    -fx-background-color: #5b21b6;
+}
+
+.button:disabled, .menu-button:disabled {
+    -fx-opacity: 0.4;
+}
+
+.botonTransparente {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-text-fill: #d0d0e0;
+    -fx-background-radius: 6;
+    -fx-border-radius: 6;
+    -fx-padding: 6 16 6 16;
+    -fx-cursor: hand;
+}
+
+.botonTransparente:hover {
+    -fx-background-color: #7c3aed;
+    -fx-text-fill: #ffffff;
+    -fx-border-color: transparent;
+}
+
+/* Menu desplegable */
+.context-menu {
+    -fx-background-color: #16161f;
+    -fx-border-color: #3a3a52;
+    -fx-border-width: 1;
+    -fx-border-radius: 6;
+    -fx-background-radius: 6;
+}
+
+.menu-item .label {
+    -fx-text-fill: #d0d0e0;
+}
+
+.menu-item:hover {
+    -fx-background-color: #7c3aed;
+}
+
+.menu-item:hover .label {
+    -fx-text-fill: #ffffff;
+}
+
+.menu-button .label {
+    -fx-text-fill: #d0d0e0;
+}
+
+.menu-button .arrow {
+    -fx-background-color: #d0d0e0;
+}
+
+/* Slider */
+.slider .track {
+    -fx-background-color: #3a3a52;
+    -fx-pref-height: 5;
+    -fx-background-radius: 4;
+}
+
+.slider .thumb {
+    -fx-background-color: #7c3aed;
+    -fx-pref-width: 16;
+    -fx-pref-height: 16;
+    -fx-background-radius: 50%;
+}
+
+.slider .thumb:hover {
+    -fx-background-color: #9d5ff5;
+}
+
+.slider .axis {
+    -fx-tick-label-fill: #6b6b8a;
+    -fx-font-size: 10px;
+}
+
+/* Histogramas */
+.hist-card {
+    -fx-background-color: #16161f;
+    -fx-background-radius: 8;
+    -fx-border-color: #3a3a52;
+    -fx-border-radius: 8;
+    -fx-border-width: 1;
+    -fx-padding: 10;
+}
+
+.hist-chart {
+    -fx-background-color: transparent;
+    -fx-plot-background-color: #1e1e2e;
+}
+
+.hist-chart .chart-plot-background {
+    -fx-background-color: #1e1e2e;
+}
+
+.hist-chart .chart-vertical-grid-lines {
+    -fx-stroke: transparent;
+}
+
+.hist-chart .chart-horizontal-grid-lines {
+    -fx-stroke: #2a2a3d;
+}
+
+.hist-chart .axis {
+    -fx-tick-label-fill: #6b6b8a;
+    -fx-font-size: 10px;
+}
+
+/* Colores por canal */
+.hist-label-r { -fx-text-fill: #f87171; -fx-font-weight: bold; }
+.hist-label-g { -fx-text-fill: #4ade80; -fx-font-weight: bold; }
+.hist-label-b { -fx-text-fill: #60a5fa; -fx-font-weight: bold; }
+.hist-label-i { -fx-text-fill: #d0d0e0; -fx-font-weight: bold; }
+
+.hist-chart .default-color0.chart-bar {
+    -fx-bar-fill: #7c3aed;
+}

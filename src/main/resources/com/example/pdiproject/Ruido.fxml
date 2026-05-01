@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+
+<VBox spacing="10" xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:id="root"
+      fx:controller="com.example.pdiproject.Controllers.RuidoController">
+
+    <ImageView fx:id="imageView" fitWidth="850" fitHeight="500" preserveRatio="true"/>
+
+    <ComboBox fx:id="tipoRuido" promptText="Selecciona ruido"
+              onAction="#onRuidoSeleccionado"/>
+
+    <VBox fx:id="panelVarianza" visible="false" managed="false" spacing="5">
+        <Label text="Varianza (100 - 2000)" style="-fx-text-fill: #F0EDED"/>
+        <Slider fx:id="sliderVarianza" min="100" max="2000" value="500" showTickLabels="true"/>
+        <Label fx:id="labelVarianza" text="500" style="-fx-text-fill: #F0EDED"/>
+    </VBox>
+
+    <VBox fx:id="panelAlpha" visible="false" managed="false" spacing="5">
+        <Label text="Alpha (1 - 5)" style="-fx-text-fill: #F0EDED"/>
+        <Slider fx:id="sliderAlpha" min="1" max="5" value="2" showTickLabels="true"
+                snapToTicks="true" majorTickUnit="1"/>
+    </VBox>
+
+    <VBox fx:id="panelProbabilidad" visible="false" managed="false" spacing="5">
+        <Label text="Probabilidad (1% - 30%)" style="-fx-text-fill: #F0EDED"/>
+        <Slider fx:id="sliderProbabilidad" min="0.01" max="0.30" value="0.10" showTickLabels="true"/>
+        <Label fx:id="labelProbabilidad" text="10%" style="-fx-text-fill: #F0EDED"/>
+    </VBox>
+
+    <Button text="Aplicar Ruido" onAction="#aplicarRuido"/>
+    <Button text="Enviar al panel principal" onAction="#handleEnviarAlIndice"/>
+
+
+</VBox>

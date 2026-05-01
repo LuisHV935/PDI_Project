@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.scene.image.ImageView?>
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.example.pdiproject.Controllers.CambiarIluminacionController"
+            prefHeight="400.0" prefWidth="600.0"
+            fx:id="root">
+    <Slider fx:id="valorDeIluminacion"
+            AnchorPane.topAnchor="20"
+            AnchorPane.leftAnchor="5"
+            AnchorPane.rightAnchor="5"
+            min="-256"
+            max="256"
+            value="0"
+            showTickLabels="true"
+            showTickMarks="true"
+            majorTickUnit="8.0"
+            minorTickCount="7"
+            snapToTicks="true"/>
+    <HBox
+            alignment="BOTTOM_CENTER"
+            AnchorPane.topAnchor="65"
+            AnchorPane.leftAnchor="10"
+            AnchorPane.rightAnchor="10">
+        <Button fx:id="aplicarCambios"
+                text="Aplicar Cambios"
+                onAction="#handleAplicarCambios"/>
+        <Button fx:id="guardarImagen"
+                text="Guardar Cambios"
+                onAction="#handleGuardar"
+                disable="true"/>
+    </HBox>
+    <ImageView fx:id="imagenConCambiosDeIluminacion"
+            fitWidth="900"
+            fitHeight="550"
+            AnchorPane.topAnchor="100"
+               AnchorPane.leftAnchor="10"
+               AnchorPane.rightAnchor="10"/>
+
+</AnchorPane>

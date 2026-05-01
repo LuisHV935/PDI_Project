@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.scene.image.ImageView?>
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.example.pdiproject.Controllers.CambiarContrasteController"
+      prefHeight="400.0" prefWidth="600.0"
+      fx:id="root"
+        alignment="BASELINE_CENTER">
+    <Slider fx:id="valor"
+        min = "0"
+        max = "3.0"
+        value="1.5"
+        showTickLabels="true"
+        showTickMarks="true"
+        majorTickUnit="0.5"
+        minorTickCount="4"
+        snapToTicks="true"/>
+
+    <HBox alignment="CENTER">
+        <Button fx:id="guardarImagen"
+        text="Guardar Imagen"
+        disable="true"
+        onAction="#handleGuardar"
+        />
+        <Button
+                text="Aplicar"
+                onAction="#handlerAplicar"
+        />
+    </HBox>
+    <ImageView fx:id="imagenConCambiosDeContraste"
+               fitWidth="800"
+               fitHeight="500"/>
+</VBox>

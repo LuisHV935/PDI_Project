@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+
+<VBox spacing="10" xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.example.pdiproject.Controllers.FiltroController"
+        fx:id="root">
+
+    <ImageView fx:id="imageView" fitWidth="850" fitHeight="1000" preserveRatio="true"/>
+
+    <ComboBox fx:id="tipoFiltro" promptText="Selecciona filtro"
+              onAction="#onFiltroSeleccionado"/>
+
+    <VBox fx:id="panelN" visible="false" managed="false" spacing="5">
+        <Label text="Tamaño de ventana" style="-fx-text-fill: #F0EDED" />
+        <ComboBox fx:id="selectorN" promptText="N"/>
+    </VBox>
+
+    <Button text="Aplicar Filtro" onAction="#aplicarFiltro"/>
+    <Button text="Enviar al panel principal" onAction="#handleEnviarAlIndice"/>
+
+</VBox>
