@@ -36,6 +36,7 @@ public class IndexController {
     @FXML private Button ruidoB;
     @FXML private Button filtrosB;
     @FXML private Button conversionesB;
+    @FXML private Button binarizadoB;
 
     private Image imagenOriginal;
     private Image imagenAEscalaDeGrises;
@@ -266,6 +267,28 @@ public class IndexController {
         }
     }
 
+    //Practica 4
+    @FXML
+    public void handleBinarizado() {
+        String rutaFXML = "/com/example/pdiproject/Binarizado.fxml";
+        try {
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(getClass().getResource(rutaFXML));
+            Parent root = loader.load();
+            BinarizadoController controller = loader.getController();
+            controller.setImagen(this.imagenSeleccionada);
+            Scene scene = new Scene(root);
+            Stage ventana = new Stage();
+            fijarDimensionMax(ventana);
+            ventana.setTitle("Binarización");
+            ventana.setScene(scene);
+            ventana.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+
     //Metodos Auxiliares
     public void generaraANivelesDeGris(){
         if(this.imagenAEscalaDeGrises == null){
@@ -290,6 +313,7 @@ public class IndexController {
         this.ruidoB.setDisable(false);
         this.metricasDeLaImagen.setDisable(false);
         this.conversionesB.setDisable(false);
+        this.binarizadoB.setDisable(false);
 
     }
 

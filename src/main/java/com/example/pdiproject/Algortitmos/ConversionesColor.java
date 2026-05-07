@@ -147,7 +147,7 @@ public class ConversionesColor {
                 int rgb = src.getRGB(x, y);
                 double r = ((rgb >> 16) & 0xFF) / 255.0;
                 double g = ((rgb >> 8)  & 0xFF) / 255.0;
-                double b = ( rgb        & 0xFF) / 255.0;
+                double b = ( rgb & 0xFF) / 255.0;
                 int idx = y * w + x;
                 Y[idx] =  0.299 * r + 0.587 * g + 0.114 * b;
                 I[idx] =  0.596 * r - 0.274 * g - 0.322 * b;

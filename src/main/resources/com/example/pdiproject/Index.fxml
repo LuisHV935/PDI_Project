@@ -64,6 +64,11 @@
                     styleClass="botonTransparente"
                     disable="true"/>
 
+            <Button fx:id="binarizadoB" text="Binarizado"
+                    onAction="#handleBinarizado"
+                    styleClass="botonTransparente"
+                    disable="true"/>
+
         </HBox>
     </top>
 

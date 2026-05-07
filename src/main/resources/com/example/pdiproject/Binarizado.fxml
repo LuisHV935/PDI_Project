@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+
+<ScrollPane fitToWidth="true"
+            xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            style="-fx-background-color: #1e1e2e; -fx-background: #1e1e2e;"
+            fx:controller="com.example.pdiproject.Controllers.BinarizadoController">
+
+    <VBox fx:id="root" spacing="14"
+          style="-fx-padding: 16; -fx-background-color: #1e1e2e;">
+
+        <!-- Toolbar -->
+        <HBox spacing="10" alignment="CENTER_LEFT">
+            <Label text="Tipo de binarización:" style="-fx-text-fill: #d0d0e0; -fx-font-size: 13px;"/>
+            <ComboBox fx:id="selectorBinarizacion" promptText="Selecciona método"/>
+            <Button text="Aplicar" onAction="#aplicarBinarizacion"/>
+        </HBox>
+
+        <Separator style="-fx-background-color: #3a3a52;"/>
+
+        <!-- Original vs Resultado -->
+        <Label text="Original vs Resultado" style="-fx-text-fill: #7c3aed; -fx-font-size: 12px; -fx-font-weight: bold;"/>
+        <HBox spacing="24" alignment="CENTER">
+            <VBox spacing="6" alignment="CENTER">
+                <Label text="Original (RGB)" style="-fx-text-fill: #a0a0c0; -fx-font-size: 11px;"/>
+                <ImageView fx:id="imgOriginal" fitWidth="480" fitHeight="360" preserveRatio="true"/>
+            </VBox>
+            <VBox spacing="6" alignment="CENTER">
+                <Label fx:id="labelResultado" text="Resultado" style="-fx-text-fill: #a0a0c0; -fx-font-size: 11px;"/>
+                <ImageView fx:id="imgResultado" fitWidth="480" fitHeight="360" preserveRatio="true"/>
+            </VBox>
+        </HBox>
+
+        <Separator style="-fx-background-color: #3a3a52;"/>
+
+        <!-- Descripción del método -->
+        <Label text="Descripción del método" style="-fx-text-fill: #7c3aed; -fx-font-size: 12px; -fx-font-weight: bold;"/>
+        <HBox spacing="16" alignment="CENTER_LEFT">
+            <Label fx:id="labelDescripcion"
+                   text="Selecciona un método para ver su descripción."
+                   wrapText="true"
+                   style="-fx-text-fill: #a0a0c0; -fx-font-size: 11px;"
+                   maxWidth="900"/>
+        </HBox>
+
+        <Separator style="-fx-background-color: #3a3a52;"/>
+
+        <!-- Canales Y original vs Y binarizado -->
+        <Label text="Canal Y: original vs binarizado" style="-fx-text-fill: #7c3aed; -fx-font-size: 12px; -fx-font-weight: bold;"/>
+        <HBox spacing="24" alignment="CENTER">
+            <VBox spacing="6" alignment="CENTER">
+                <Label text="Y original (luminancia)" style="-fx-text-fill: #d0d0e0; -fx-font-size: 11px;"/>
+                <ImageView fx:id="imgCanalYOriginal" fitWidth="380" fitHeight="280" preserveRatio="true"/>
+            </VBox>
+            <VBox spacing="6" alignment="CENTER">
+                <Label text="Y binarizado" style="-fx-text-fill: #d0d0e0; -fx-font-size: 11px;"/>
+                <ImageView fx:id="imgCanalYBinarizado" fitWidth="380" fitHeight="280" preserveRatio="true"/>
+            </VBox>
+        </HBox>
+
+    </VBox>
+</ScrollPane>
