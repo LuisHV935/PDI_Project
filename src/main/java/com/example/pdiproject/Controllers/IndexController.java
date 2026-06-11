@@ -7,6 +7,10 @@ import com.example.pdiproject.Algortitmos.DensidadDePotencia;
 import com.example.pdiproject.Algortitmos.Histogramas;
 import com.example.pdiproject.Algortitmos.ObtenerImagenAEscalaDeGrises;
 import com.example.pdiproject.Algortitmos.ProbabilidadDeAparicion;
+import com.example.pdiproject.Controllers.TransformacionesController;
+import com.example.pdiproject.Controllers.OperacionesAritmeticasController;
+import com.example.pdiproject.Controllers.OperacionesLogicasController;
+import com.example.pdiproject.Controllers.OperacionesRelacionalesController;
 import javafx.css.PseudoClass;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -15,6 +19,7 @@ import javafx.geometry.Rectangle2D;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Menu;
 import javafx.scene.control.MenuButton;
 import javafx.scene.control.MenuItem;
 import javafx.scene.image.Image;
@@ -37,6 +42,11 @@ public class IndexController {
     @FXML private Button filtrosB;
     @FXML private Button conversionesB;
     @FXML private Button binarizadoB;
+    @FXML private MenuButton OperacionesB;
+    @FXML private MenuItem transformacionesB;
+    @FXML private MenuItem aritmeticasB;
+    @FXML private MenuItem logicasB;
+    @FXML private MenuItem relacionalesB;
 
     private Image imagenOriginal;
     private Image imagenAEscalaDeGrises;
@@ -289,6 +299,104 @@ public class IndexController {
     }
 
 
+    //Practica 5 - Operaciones con imagenes
+    @FXML
+    public void handleTransformaciones() {
+        String rutaFXML = "/com/example/pdiproject/Transformaciones.fxml";
+        try {
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(getClass().getResource(rutaFXML));
+            Parent root = loader.load();
+            TransformacionesController controller = loader.getController();
+            controller.setImagen(this.imagenSeleccionada);
+            controller.setOnImagenProcesada(img -> {
+                imagenSeleccionada = img;
+                imagenAMostrar.setImage(img);
+                configuracionDeCarga(img);
+            });
+            Scene scene = new Scene(root, 900, 700);
+            Stage ventana = new Stage();
+            ventana.setTitle("Transformaciones");
+            ventana.setScene(scene);
+            ventana.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @FXML
+    public void handleAritmeticas() {
+        String rutaFXML = "/com/example/pdiproject/OperacionesAritmeticas.fxml";
+        try {
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(getClass().getResource(rutaFXML));
+            Parent root = loader.load();
+            OperacionesAritmeticasController controller = loader.getController();
+            controller.setImagen(this.imagenSeleccionada);
+            controller.setOnImagenProcesada(img -> {
+                imagenSeleccionada = img;
+                imagenAMostrar.setImage(img);
+                configuracionDeCarga(img);
+            });
+            Scene scene = new Scene(root, 900, 700);
+            Stage ventana = new Stage();
+            ventana.setTitle("Operaciones Aritmeticas");
+            ventana.setScene(scene);
+            ventana.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @FXML
+    public void handleLogicas() {
+        String rutaFXML = "/com/example/pdiproject/OperacionesLogicas.fxml";
+        try {
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(getClass().getResource(rutaFXML));
+            Parent root = loader.load();
+            OperacionesLogicasController controller = loader.getController();
+            controller.setImagen(this.imagenSeleccionada);
+            controller.setOnImagenProcesada(img -> {
+                imagenSeleccionada = img;
+                imagenAMostrar.setImage(img);
+                configuracionDeCarga(img);
+            });
+            Scene scene = new Scene(root, 900, 700);
+            Stage ventana = new Stage();
+            ventana.setTitle("Operaciones Logicas");
+            ventana.setScene(scene);
+            ventana.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @FXML
+    public void handleRelacionales() {
+        String rutaFXML = "/com/example/pdiproject/OperacionesRelacionales.fxml";
+        try {
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(getClass().getResource(rutaFXML));
+            Parent root = loader.load();
+            OperacionesRelacionalesController controller = loader.getController();
+            controller.setImagen(this.imagenSeleccionada);
+            controller.setOnImagenProcesada(img -> {
+                imagenSeleccionada = img;
+                imagenAMostrar.setImage(img);
+                configuracionDeCarga(img);
+            });
+            Scene scene = new Scene(root, 900, 700);
+            Stage ventana = new Stage();
+            ventana.setTitle("Operaciones Relacionales");
+            ventana.setScene(scene);
+            ventana.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+
     //Metodos Auxiliares
     public void generaraANivelesDeGris(){
         if(this.imagenAEscalaDeGrises == null){
@@ -314,7 +422,7 @@ public class IndexController {
         this.metricasDeLaImagen.setDisable(false);
         this.conversionesB.setDisable(false);
         this.binarizadoB.setDisable(false);
-
+        this.OperacionesB.setDisable(false);
     }
 
     public void calcularProbabilidades(){

@@ -69,6 +69,20 @@
                     styleClass="botonTransparente"
                     disable="true"/>
 
+            <MenuButton fx:id="OperacionesB" disable="true" text="Operaciones" styleClass="botonTransparente">
+                <items>
+                    <MenuItem fx:id="transformacionesB" text="Transformaciones"
+                              onAction="#handleTransformaciones">
+                    </MenuItem >
+                    <MenuItem fx:id="aritmeticasB" text="Aritmeticas"
+                    onAction="#handleAritmeticas">
+                    </MenuItem>
+                    <MenuItem fx:id="relacionalesB" text="Relacionales"
+                              onAction="#handleRelacionales"/>
+                    <MenuItem fx:id="logicasB" text="Logicas"
+                              onAction="#handleLogicas"/>
+                </items>
+            </MenuButton>
         </HBox>
     </top>
 

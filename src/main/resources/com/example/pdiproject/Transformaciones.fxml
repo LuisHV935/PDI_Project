@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+
+<ScrollPane fitToWidth="true"
+            xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            stylesheets="@PDIGUIStyle.css"
+            fx:controller="com.example.pdiproject.Controllers.TransformacionesController">
+
+    <VBox fx:id="root" spacing="10" style="-fx-padding: 16">
+
+        <HBox spacing="10">
+            <VBox spacing="5">
+                <Label text="Original" style="-fx-text-fill: #d0d0e0; -fx-font-size: 13px;"/>
+                <ImageView fx:id="imageView" fitWidth="420" fitHeight="400" preserveRatio="true"/>
+            </VBox>
+            <VBox spacing="5">
+                <Label text="Resultado" style="-fx-text-fill: #d0d0e0; -fx-font-size: 13px;"/>
+                <ImageView fx:id="imageViewResultado" fitWidth="420" fitHeight="400" preserveRatio="true"/>
+            </VBox>
+        </HBox>
+
+        <ComboBox fx:id="tipoOperacion" promptText="Selecciona operacion"
+                  onAction="#onOperacionSeleccionada"/>
+
+        <VBox fx:id="panelInterpolacion" spacing="5">
+            <Label text="Interpolacion" style="-fx-text-fill: #d0d0e0"/>
+            <ComboBox fx:id="tipoInterpolacion"/>
+        </VBox>
+
+        <VBox fx:id="panelTraslacion" visible="false" managed="false" spacing="5">
+            <Label text="Desplazamiento X (-200 a 200)" style="-fx-text-fill: #d0d0e0"/>
+            <Slider fx:id="sliderDX" min="-200" max="200" value="50" showTickLabels="true"
+                    snapToTicks="true" majorTickUnit="50"/>
+            <Label fx:id="labelDX" text="50" style="-fx-text-fill: #d0d0e0"/>
+
+            <Label text="Desplazamiento Y (-200 a 200)" style="-fx-text-fill: #d0d0e0"/>
+            <Slider fx:id="sliderDY" min="-200" max="200" value="50" showTickLabels="true"
+                    snapToTicks="true" majorTickUnit="50"/>
+            <Label fx:id="labelDY" text="50" style="-fx-text-fill: #d0d0e0"/>
+        </VBox>
+
+        <VBox fx:id="panelRotacion" visible="false" managed="false" spacing="5">
+            <Label text="Angulo (-180 a 180)" style="-fx-text-fill: #d0d0e0"/>
+            <Slider fx:id="sliderAngulo" min="-180" max="180" value="45" showTickLabels="true"
+                    snapToTicks="true" majorTickUnit="45"/>
+            <Label fx:id="labelAngulo" text="45.0°" style="-fx-text-fill: #d0d0e0"/>
+        </VBox>
+
+        <Button text="Aplicar Transformacion" onAction="#aplicarTransformacion"/>
+        <Button text="Enviar al panel principal" onAction="#handleEnviarAlIndice"/>
+
+    </VBox>
+</ScrollPane>

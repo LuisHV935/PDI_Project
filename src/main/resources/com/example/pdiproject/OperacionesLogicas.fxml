@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+
+<ScrollPane fitToWidth="true"
+            xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            stylesheets="@PDIGUIStyle.css"
+            fx:controller="com.example.pdiproject.Controllers.OperacionesLogicasController">
+
+    <VBox fx:id="root" spacing="10" style="-fx-padding: 16">
+
+        <HBox spacing="10">
+            <VBox spacing="5">
+                <Label text="Imagen 1" style="-fx-text-fill: #d0d0e0; -fx-font-size: 13px;"/>
+                <ImageView fx:id="imageView" fitWidth="420" fitHeight="400" preserveRatio="true"/>
+            </VBox>
+            <VBox spacing="5">
+                <Label text="Imagen 2" style="-fx-text-fill: #d0d0e0; -fx-font-size: 13px;"/>
+                <ImageView fx:id="imageView2" fitWidth="420" fitHeight="400" preserveRatio="true"/>
+                <Button fx:id="cargarImagen2" text="Cargar Imagen 2" onAction="#handleCargarImagen2"/>
+            </VBox>
+            <VBox spacing="5">
+                <Label text="Resultado" style="-fx-text-fill: #d0d0e0; -fx-font-size: 13px;"/>
+                <ImageView fx:id="imageViewResultado" fitWidth="420" fitHeight="400" preserveRatio="true"/>
+            </VBox>
+        </HBox>
+
+        <Separator/>
+
+        <ComboBox fx:id="tipoOperacion" promptText="Selecciona operacion"
+                  onAction="#onOperacionSeleccionada"/>
+
+        <VBox fx:id="panelImagen2" visible="false" managed="false" spacing="5">
+            <Label text="Se usara la Imagen 2 para la operacion" style="-fx-text-fill: #a0a0c0; -fx-font-size: 11px;"/>
+        </VBox>
+
+        <VBox fx:id="panelEscalar" visible="false" managed="false" spacing="5">
+            <Label text="Valor escalar (mascara)" style="-fx-text-fill: #d0d0e0; -fx-font-size: 13px;"/>
+            <Slider fx:id="sliderEscalar" min="0" max="255" value="128" showTickLabels="true"
+                    snapToTicks="true" majorTickUnit="64"/>
+            <Label fx:id="labelEscalar" text="0x00000080" style="-fx-text-fill: #d0d0e0"/>
+        </VBox>
+
+        <Separator/>
+
+        <Button text="Aplicar Operacion" onAction="#aplicarOperacion"/>
+        <Button text="Enviar al panel principal" onAction="#handleEnviarAlIndice"/>
+
+    </VBox>
+</ScrollPane>
